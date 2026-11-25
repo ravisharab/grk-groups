@@ -1,0 +1,128 @@
+
+@import "tailwindcss";
+
+:root {
+  font-family: Inter, system-ui, Arial, sans-serif;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 24px;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  background: #06152f;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+::selection {
+  background: #fbbf24;
+  color: #06152f;
+}
+
+/* Premium animated gold text */
+.grk-gold-text {
+  background: linear-gradient(
+    110deg,
+    #fde68a 0%,
+    #fbbf24 25%,
+    #fff1b0 45%,
+    #f59e0b 65%,
+    #fbbf24 100%
+  );
+  background-size: 200% auto;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  animation: grkShine 5s linear infinite;
+}
+
+/* Gold CTA */
+.grk-gold-button {
+  background: linear-gradient(
+    110deg,
+    #fde68a,
+    #fbbf24,
+    #f59e0b
+  );
+  box-shadow: 0 12px 30px rgba(245, 158, 11, 0.24);
+  transition: transform 300ms, box-shadow 300ms;
+}
+
+.grk-gold-button:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 18px 42px rgba(245, 158, 11, 0.38);
+}
+
+/* Service cards */
+.grk-service-card {
+  transition:
+    transform 350ms ease,
+    box-shadow 350ms ease,
+    border-color 350ms ease;
+}
+
+.grk-service-card:hover {
+  transform: translateY(-10px);
+  border-color: #93c5fd;
+  box-shadow: 0 25px 55px rgba(30, 64, 175, 0.17);
+}
+
+/* Entrance animation */
+.grk-reveal {
+  animation: grkFadeUp 900ms ease-out both;
+}
+
+/* Floating background lights */
+.grk-float {
+  animation: grkFloat 8s ease-in-out infinite;
+}
+
+.grk-float-slow {
+  animation: grkFloat 12s ease-in-out infinite reverse;
+}
+
+@keyframes grkShine {
+  to {
+    background-position: 200% center;
+  }
+}
+
+@keyframes grkFadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes grkFloat {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-35px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+}
