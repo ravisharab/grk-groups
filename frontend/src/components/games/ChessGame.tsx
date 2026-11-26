@@ -3,7 +3,6 @@ import { useEffect, useState } from 'react';
 import { Chess } from 'chess.js';
 import type { Square, Move } from 'chess.js';
 import {
-  Gamepad2,
   X,
   RotateCcw,
   Undo2,
