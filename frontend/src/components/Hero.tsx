@@ -1,4 +1,4 @@
-
+import FounderBadge from './FounderBadge';
 import {
   ArrowRight,
   ArrowUpRight,
@@ -133,6 +133,7 @@ export default function Hero() {
                       inset-x-0 bottom-0 h-28
                       bg-gradient-to-t from-[#06152f]/60
                       to-transparent" />
+        <FounderBadge />
     </section>
   );
 }
