@@ -12,12 +12,14 @@ import SpaceBlaster from './games/SpaceBlaster';
 import ChessGame from './games/ChessGame';
 import SudokuGame from './games/SudokuGame';
 import TicTacToeGame from './games/TicTacToeGame';
+import ZombieAttack from './games/ZombieAttack';
 
 type GameType =
   | 'space'
   | 'chess'
   | 'sudoku'
   | 'tictactoe'
+  | 'zombie'
   | null;
 
 interface GameCard {
@@ -76,6 +78,17 @@ const games: GameCard[] = [
     border: 'border-blue-400/30 hover:border-blue-400',
     textColor: 'text-blue-300',
   },
+  {
+  id: 'zombie',
+  name: 'Zombie Attack',
+  icon: '🧟',
+  description:
+    'Survive zombie waves, defeat bosses and collect power-ups.',
+  benefit: 'Action & Quick Thinking',
+  gradient: 'from-green-600 to-emerald-900',
+  border: 'border-green-400/30 hover:border-green-400',
+  textColor: 'text-green-300',
+},
 ];
 
 export default function KidsGame() {
@@ -126,6 +139,14 @@ export default function KidsGame() {
       <TicTacToeGame onClose={backToMenu} />
     );
   }
+
+  // Zombie Attack
+
+if (activeGame === 'zombie') {
+  return (
+    <ZombieAttack onClose={backToMenu} />
+  );
+}
 
   return (
 
@@ -186,7 +207,7 @@ export default function KidsGame() {
               </h3>
 
               <p className="mt-1 text-xs text-slate-400">
-                Four exciting games to play and learn!
+                Five exciting games to play and learn!
               </p>
 
             </div>
