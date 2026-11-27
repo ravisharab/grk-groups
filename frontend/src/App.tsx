@@ -14,7 +14,8 @@ import FashionPage from './pages/FashionPage';
 
 import { Analytics } from '@vercel/analytics/react';
 import VisitorAnalytics from './components/VisitorAnalytics';
-
+import FashionAdminPage from './pages/FashionAdminPage';
+import ProductDetailsPage from './pages/ProductDetailsPage';
 // Existing GRK Groups homepage
 function HomePage() {
   return (
@@ -71,7 +72,21 @@ export default function App() {
           path="/fashion"
           element={<FashionPage />}
         />
+        <Route
+  path="/fashion/admin"
+  element={<FashionAdminPage />}
+/>
+<Route path="/fashion" element={<FashionPage />} />
 
+<Route
+  path="/fashion/product/:slug"
+  element={<ProductDetailsPage />}
+/>
+
+<Route
+  path="/fashion/admin"
+  element={<FashionAdminPage />}
+/>
       </Routes>
 
       {/* Website Footer */}
