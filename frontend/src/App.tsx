@@ -9,6 +9,8 @@ import Contact from './components/Contact';
 import KidsGame from './components/KidsGame';
 import AboutPage from './pages/AboutPage';
 import ServicesPage from './pages/ServicesPage';
+import { Analytics } from '@vercel/analytics/react';
+import VisitorAnalytics from './components/VisitorAnalytics';
 
 // Existing GRK Groups homepage
 function HomePage() {
@@ -58,6 +60,8 @@ export default function App() {
 
       {/* Keep Kids Shooting Game unchanged */}
       <KidsGame />
+      <Analytics />
+      <VisitorAnalytics />
     </>
   );
 }
