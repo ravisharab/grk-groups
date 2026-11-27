@@ -131,7 +131,7 @@ export default function VisitorAnalytics() {
   ];
 
   return (
-    <div className="fixed right-5 top-24 z-[80]">
+    <div className="fixed bottom-5 right-[190px] z-[90]">
 
       {/* Analytics Button */}
 
@@ -143,13 +143,13 @@ export default function VisitorAnalytics() {
           if (!open) void loadStats();
           setOpen(!open);
         }}
-        className="ml-auto flex items-center gap-2 rounded-full border border-amber-400/40 bg-[#06152f]/95 px-3 py-2 text-amber-300 shadow-lg backdrop-blur-md transition-all hover:border-amber-400 hover:scale-105"
+        className="flex items-center gap-2 rounded-full border border-amber-300/40 bg-gradient-to-r from-[#102747] to-[#06152f] px-4 py-4 font-bold text-amber-300 shadow-xl transition hover:-translate-y-1 sm:px-5"
       >
-        <BarChart3 size={17} />
+        <BarChart3 size={22} />
 
-        <span className="text-xs font-bold">
-          Analytics
-        </span>
+<span className="hidden text-sm font-bold sm:inline">
+  Analytics
+</span>
       </button>
 
       {/* Analytics Popup */}
@@ -157,7 +157,7 @@ export default function VisitorAnalytics() {
       {open && (
         <div
           id="visitor-analytics"
-          className="mt-3 max-h-[75dvh] w-[min(320px,calc(100vw-40px))] overflow-y-auto rounded-2xl border border-amber-400/40 bg-[#06152f] p-4 text-white shadow-2xl"
+          className="fixed bottom-24 right-5 z-[90] max-h-[75dvh] w-[min(320px,calc(100vw-40px))] overflow-y-auto rounded-2xl border border-amber-400/40 bg-[#06152f] p-4 text-white shadow-2xl sm:right-[190px]"
         >
 
           {/* Header */}
