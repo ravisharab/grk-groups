@@ -7,15 +7,17 @@ import About from './components/About';
 import Services from './components/Services';
 import Contact from './components/Contact';
 import KidsGame from './components/KidsGame';
+import FounderBadge from './components/FounderBadge';
 
 import AboutPage from './pages/AboutPage';
 import ServicesPage from './pages/ServicesPage';
 import FashionPage from './pages/FashionPage';
+import FashionAdminPage from './pages/FashionAdminPage';
+import ProductDetailsPage from './pages/ProductDetailsPage';
 
 import { Analytics } from '@vercel/analytics/react';
 import VisitorAnalytics from './components/VisitorAnalytics';
-import FashionAdminPage from './pages/FashionAdminPage';
-import ProductDetailsPage from './pages/ProductDetailsPage';
+
 // Existing GRK Groups homepage
 function HomePage() {
   return (
@@ -45,8 +47,13 @@ function HomePage() {
 export default function App() {
   return (
     <>
+      {/* Global Navigation */}
       <Navbar />
 
+      {/* Global Founder Photograph */}
+      <FounderBadge />
+
+      {/* Website Routes */}
       <Routes>
 
         {/* Homepage */}
@@ -72,21 +79,19 @@ export default function App() {
           path="/fashion"
           element={<FashionPage />}
         />
+
+        {/* Fashion Product Details */}
         <Route
-  path="/fashion/admin"
-  element={<FashionAdminPage />}
-/>
-<Route path="/fashion" element={<FashionPage />} />
+          path="/fashion/product/:slug"
+          element={<ProductDetailsPage />}
+        />
 
-<Route
-  path="/fashion/product/:slug"
-  element={<ProductDetailsPage />}
-/>
+        {/* Fashion Admin Portal */}
+        <Route
+          path="/fashion/admin"
+          element={<FashionAdminPage />}
+        />
 
-<Route
-  path="/fashion/admin"
-  element={<FashionAdminPage />}
-/>
       </Routes>
 
       {/* Website Footer */}
