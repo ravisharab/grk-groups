@@ -8,6 +8,7 @@ const navLinks = [
   { name: 'Home', href: '/' },
   { name: 'About Us', href: '/about' },
   { name: 'Services', href: '/services' },
+  { name: 'GRK Fashion', href: '/fashion' },
   { name: 'Projects', href: '/#projects' },
   { name: 'Contact Us', href: '/#contact' },
 ];
@@ -42,11 +43,16 @@ export default function Navbar() {
             <a
               key={link.name}
               href={link.href}
-              className="rounded-full px-4 py-2.5
-                         text-sm font-semibold text-white
+              className={`whitespace-nowrap rounded-full px-4 py-2.5
+                         text-sm font-semibold
                          transition-all duration-300
                          hover:bg-amber-300
-                         hover:text-slate-950"
+                         hover:text-slate-950
+                         ${
+                           link.href === '/fashion'
+                             ? 'bg-gradient-to-r from-amber-200 to-amber-500 text-slate-950'
+                             : 'text-white'
+                         }`}
             >
               {link.name}
             </a>
@@ -94,9 +100,13 @@ export default function Navbar() {
               key={link.name}
               href={link.href}
               onClick={() => setMenuOpen(false)}
-              className="block rounded-xl px-4 py-3
-                         font-medium text-white
-                         hover:bg-white/10"
+              className={`block rounded-xl px-4 py-3
+                         font-medium transition-all
+                         ${
+                           link.href === '/fashion'
+                             ? 'bg-amber-400 text-slate-950'
+                             : 'text-white hover:bg-white/10'
+                         }`}
             >
               {link.name}
             </a>

@@ -7,8 +7,11 @@ import About from './components/About';
 import Services from './components/Services';
 import Contact from './components/Contact';
 import KidsGame from './components/KidsGame';
+
 import AboutPage from './pages/AboutPage';
 import ServicesPage from './pages/ServicesPage';
+import FashionPage from './pages/FashionPage';
+
 import { Analytics } from '@vercel/analytics/react';
 import VisitorAnalytics from './components/VisitorAnalytics';
 
@@ -44,23 +47,46 @@ export default function App() {
       <Navbar />
 
       <Routes>
-        <Route path="/" element={<HomePage />} />
 
+        {/* Homepage */}
+        <Route
+          path="/"
+          element={<HomePage />}
+        />
+
+        {/* About Us */}
         <Route
           path="/about"
           element={<AboutPage />}
         />
-        <Route path="/services" element={<ServicesPage />} />
+
+        {/* Services */}
+        <Route
+          path="/services"
+          element={<ServicesPage />}
+        />
+
+        {/* GRK Fashion */}
+        <Route
+          path="/fashion"
+          element={<FashionPage />}
+        />
+
       </Routes>
 
+      {/* Website Footer */}
       <footer className="bg-[#06152f] px-6 py-8 text-center text-slate-300">
         © {new Date().getFullYear()} GRK Groups.
         All rights reserved.
       </footer>
 
-      {/* Keep Kids Shooting Game unchanged */}
+      {/* Existing Kids Gaming Zone */}
       <KidsGame />
+
+      {/* Vercel Analytics */}
       <Analytics />
+
+      {/* Visitor Analytics Dashboard */}
       <VisitorAnalytics />
     </>
   );
