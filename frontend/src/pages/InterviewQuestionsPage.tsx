@@ -24,6 +24,7 @@ import { technologies } from '../data/interview/technologies';
 import { kafkaQuestions } from '../data/interview/kafkaQuestions';
 import { dockerQuestions } from '../data/interview/dockerQuestions';
 import { springBootQuestions } from '../data/interview/springBootQuestions';
+import { kubernetesQuestions } from "../data/interview/kubernetesQuestions";
 
 import type {
   InterviewQuestion,
@@ -41,6 +42,7 @@ const questionBanks: Record<string, InterviewQuestion[]> = {
   kafka: kafkaQuestions,
   docker: dockerQuestions,
   'spring-boot': springBootQuestions,
+  kubernetes: kubernetesQuestions,
 };
 
 function loadProgress(

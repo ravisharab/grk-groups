@@ -7,6 +7,7 @@ import { awsQuestions } from '../data/interview/awsQuestions';
 import { kafkaQuestions } from '../data/interview/kafkaQuestions';
 import { dockerQuestions } from '../data/interview/dockerQuestions';
 import { springBootQuestions } from '../data/interview/springBootQuestions';
+import { kubernetesQuestions } from "../data/interview/kubernetesQuestions";
 
 import type { InterviewQuestion } from '../types/interview';
 
@@ -16,6 +17,7 @@ const questionBanks: Record<string, InterviewQuestion[]> = {
   kafka: kafkaQuestions,
   docker: dockerQuestions,
   'spring-boot': springBootQuestions,
+  kubernetes: kubernetesQuestions,
   springboot: springBootQuestions,
 };
 const availableCount = (slug: string) => (questionBanks[slug] ?? []).filter(q => q.isPublished).length;
