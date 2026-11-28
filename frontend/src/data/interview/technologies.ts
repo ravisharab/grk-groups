@@ -222,4 +222,32 @@ export const technologies: Technology[] = [
       'Coding Challenges'
     ]
   },
+  {
+    slug: 'oracle',
+    name: 'Oracle SQL & PL/SQL',
+    icon: '🗄️',
+    description: 'Oracle Database, SQL, PL/SQL and Performance Tuning',
+    targetQuestions: 150,
+    color: 'text-red-400',
+    gradient: 'from-red-500/20 to-orange-900/20',
+    border: 'border-red-400/30',
+    topics: [
+      'Oracle Architecture',
+      'SQL Queries',
+      'Joins',
+      'Subqueries',
+      'Analytical Functions',
+      'Indexes',
+      'Views',
+      'PL/SQL',
+      'Stored Procedures',
+      'Functions',
+      'Packages',
+      'Cursors',
+      'Triggers',
+      'Exception Handling',
+      'Performance Tuning',
+      'SQL Coding Challenges'
+    ]
+  },
 ];

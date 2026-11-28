@@ -1,3 +1,4 @@
+import { oracleQuestions } from '../data/interview/oracleQuestions';
 import { pythonQuestions } from '../data/interview/pythonQuestions';
 import { codingQuestions } from '../data/interview/codingQuestions';
 import { systemDesignQuestions } from '../data/interview/systemDesignQuestions';
@@ -15,6 +16,7 @@ import { kubernetesQuestions } from "../data/interview/kubernetesQuestions";
 import type { InterviewQuestion } from '../types/interview';
 
 const questionBanks: Record<string, InterviewQuestion[]> = {
+  oracle: oracleQuestions,
   python: pythonQuestions,
   java: javaQuestions,
   aws: awsQuestions,

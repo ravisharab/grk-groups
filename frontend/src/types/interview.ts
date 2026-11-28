@@ -7,7 +7,7 @@ export type TechnologySlug =
   | 'spring-boot'
   | 'kubernetes'
   | 'system-design'
-  | 'coding' | 'python';
+  | 'coding' | 'python' | 'oracle';
 
 export type Difficulty =
   | 'beginner'
