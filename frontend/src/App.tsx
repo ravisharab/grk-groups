@@ -15,99 +15,149 @@ import FashionPage from './pages/FashionPage';
 import FashionAdminPage from './pages/FashionAdminPage';
 import ProductDetailsPage from './pages/ProductDetailsPage';
 
+// GRK Tech Academy
+
+import InterviewPrepPage from './pages/InterviewPrepPage';
+import InterviewQuestionsPage from './pages/InterviewQuestionsPage';
+
+// Analytics
+
 import { Analytics } from '@vercel/analytics/react';
 import VisitorAnalytics from './components/VisitorAnalytics';
 
-// Existing GRK Groups homepage
+// Existing GRK Groups Homepage
+
 function HomePage() {
   return (
     <main>
+
       <Hero />
+
       <About />
+
       <Services />
 
       <section
         id="projects"
         className="bg-white px-6 py-24 text-center"
       >
+
         <h2 className="text-4xl font-bold text-slate-900">
+
           Our Projects
+
         </h2>
 
         <p className="mt-5 text-slate-600">
+
           Explore our upcoming business solutions.
+
         </p>
+
       </section>
 
       <Contact />
+
     </main>
   );
 }
 
 export default function App() {
   return (
-    <>
+  <>
+
       {/* Global Navigation */}
+
       <Navbar />
 
       {/* Global Founder Photograph */}
+
       <FounderBadge />
 
       {/* Website Routes */}
+
       <Routes>
 
         {/* Homepage */}
+
         <Route
           path="/"
           element={<HomePage />}
         />
 
         {/* About Us */}
+
         <Route
           path="/about"
           element={<AboutPage />}
         />
 
         {/* Services */}
+
         <Route
           path="/services"
           element={<ServicesPage />}
         />
 
         {/* GRK Fashion */}
+
         <Route
           path="/fashion"
           element={<FashionPage />}
         />
 
         {/* Fashion Product Details */}
+
         <Route
           path="/fashion/product/:slug"
           element={<ProductDetailsPage />}
         />
 
         {/* Fashion Admin Portal */}
+
         <Route
           path="/fashion/admin"
           element={<FashionAdminPage />}
         />
 
+        {/* GRK Tech Academy Landing Page */}
+
+        <Route
+          path="/interview"
+          element={<InterviewPrepPage />}
+        />
+
+        {/* Technology Interview Questions */}
+
+        <Route
+          path="/interview/:technology"
+          element={<InterviewQuestionsPage />}
+        />
+
       </Routes>
 
       {/* Website Footer */}
+
       <footer className="bg-[#06152f] px-6 py-8 text-center text-slate-300">
+
         © {new Date().getFullYear()} GRK Groups.
         All rights reserved.
+
       </footer>
 
       {/* Existing Kids Gaming Zone */}
+
       <KidsGame />
 
       {/* Vercel Analytics */}
+
       <Analytics />
 
       {/* Visitor Analytics Dashboard */}
+
       <VisitorAnalytics />
-    </>
+      {/* Global Interview Voice Player */}
+
+      </>
   );
 }
