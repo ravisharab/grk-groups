@@ -1,3 +1,4 @@
+import { systemDesignQuestions } from '../data/interview/systemDesignQuestions';
 import { useState } from 'react';
 import { GraduationCap, Search, X, BookOpen, Languages, CheckCircle2 } from 'lucide-react';
 import TechnologyCard from '../components/interview/TechnologyCard';
@@ -18,6 +19,7 @@ const questionBanks: Record<string, InterviewQuestion[]> = {
   docker: dockerQuestions,
   'spring-boot': springBootQuestions,
   kubernetes: kubernetesQuestions,
+  'system-design': systemDesignQuestions,
   springboot: springBootQuestions,
 };
 const availableCount = (slug: string) => (questionBanks[slug] ?? []).filter(q => q.isPublished).length;
