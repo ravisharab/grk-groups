@@ -22,6 +22,8 @@ import { javaQuestions } from '../data/interview/javaQuestions';
 import { awsQuestions } from '../data/interview/awsQuestions';
 import { technologies } from '../data/interview/technologies';
 import { kafkaQuestions } from '../data/interview/kafkaQuestions';
+import { dockerQuestions } from '../data/interview/dockerQuestions';
+import { springBootQuestions } from '../data/interview/springBootQuestions';
 
 import type {
   InterviewQuestion,
@@ -37,6 +39,8 @@ const questionBanks: Record<string, InterviewQuestion[]> = {
   java: javaQuestions,
   aws: awsQuestions,
   kafka: kafkaQuestions,
+  docker: dockerQuestions,
+  'spring-boot': springBootQuestions,
 };
 
 function loadProgress(

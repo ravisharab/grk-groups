@@ -5,12 +5,17 @@ import { technologies } from '../data/interview/technologies';
 import { javaQuestions } from '../data/interview/javaQuestions';
 import { awsQuestions } from '../data/interview/awsQuestions';
 import { kafkaQuestions } from '../data/interview/kafkaQuestions';
+import { dockerQuestions } from '../data/interview/dockerQuestions';
+import { springBootQuestions } from '../data/interview/springBootQuestions';
+
 import type { InterviewQuestion } from '../types/interview';
 
 const questionBanks: Record<string, InterviewQuestion[]> = {
   java: javaQuestions,
   aws: awsQuestions,
   kafka: kafkaQuestions,
+  docker: dockerQuestions,
+  springboot: springBootQuestions,
 };
 const availableCount = (slug: string) => (questionBanks[slug] ?? []).filter(q => q.isPublished).length;
 
