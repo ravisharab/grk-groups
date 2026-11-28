@@ -15,6 +15,7 @@ const questionBanks: Record<string, InterviewQuestion[]> = {
   aws: awsQuestions,
   kafka: kafkaQuestions,
   docker: dockerQuestions,
+  'spring-boot': springBootQuestions,
   springboot: springBootQuestions,
 };
 const availableCount = (slug: string) => (questionBanks[slug] ?? []).filter(q => q.isPublished).length;
