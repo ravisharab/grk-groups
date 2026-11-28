@@ -1,135 +1,29 @@
-
 import { Link } from 'react-router-dom';
-
-import {
-  ArrowRight,
-  Headphones,
-  BookOpen,
-  Code2,
-} from 'lucide-react';
-
+import { ArrowRight, BookOpen } from 'lucide-react';
 import type { Technology } from '../../types/interview';
 
 interface TechnologyCardProps {
   technology: Technology;
+  availableQuestions?: number;
 }
 
-export default function TechnologyCard({
-  technology,
-}: TechnologyCardProps) {
-
+export default function TechnologyCard({ technology, availableQuestions = 0 }: TechnologyCardProps) {
+  const percentage = Math.min(100, Math.round(100 * availableQuestions / Math.max(1, technology.targetQuestions)));
   return (
-
-    <Link
-      to={`/interview/${technology.slug}`}
-      className={`
-        group relative flex h-full flex-col
-        overflow-hidden rounded-3xl border
-        bg-gradient-to-br p-6
-        shadow-xl transition-all duration-300
-        hover:-translate-y-2 hover:shadow-2xl
-        ${technology.gradient}
-        ${technology.border}
-      `}
-    >
-
-      <div className="mb-5 flex items-start justify-between">
-
-        <div className="flex h-20 w-20 items-center justify-center rounded-2xl border border-white/10 bg-[#06152f]/80 text-5xl shadow-lg">
-
-          {technology.icon}
-
-        </div>
-
-        <div className="rounded-full border border-amber-400/20 bg-amber-400/10 px-3 py-1 text-xs font-bold text-amber-300">
-
-          Bilingual Learning
-
-        </div>
-
+    <Link to={`/interview/${technology.slug}`} className={`group flex h-full min-w-0 flex-col rounded-2xl border bg-gradient-to-br p-3 sm:p-4 transition hover:-translate-y-1 hover:shadow-lg focus-visible:outline-2 focus-visible:outline-amber-300 ${technology.gradient} ${technology.border}`}>
+      <div className="flex items-center justify-between gap-2">
+        <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-[#06152f]/80 text-2xl">{technology.icon}</span>
+        <span className="text-right text-[10px] font-bold text-amber-300">{availableQuestions > 0 ? 'English & Telugu' : 'Coming Soon'}</span>
       </div>
-
-      <h2
-        className={`text-2xl font-black ${technology.color}`}
-      >
-
-        {technology.name}
-
-      </h2>
-
-      <p className="mt-3 text-sm leading-6 text-slate-300">
-
-        {technology.description}
-
-      </p>
-
-      <div className="my-5 flex flex-wrap gap-2">
-
-        {technology.topics.slice(0, 4).map(topic => (
-
-          <span
-            key={topic}
-            className="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs text-slate-300"
-          >
-
-            {topic}
-
-          </span>
-
-        ))}
-
+      <h2 className={`mt-2 text-base font-black sm:text-lg ${technology.color}`}>{technology.name}</h2>
+      <p className="mt-1 line-clamp-2 text-xs leading-4 text-slate-300">{technology.description}</p>
+      <div className="mt-auto pt-3">
+        <div className="flex items-center gap-1.5 text-xs text-slate-300"><BookOpen size={14} className={technology.color} />{availableQuestions} / {technology.targetQuestions} questions</div>
+        <div className="mt-2 h-1.5 overflow-hidden rounded-full bg-white/10" role="progressbar" aria-label={`${technology.name} content availability`} aria-valuenow={percentage} aria-valuemin={0} aria-valuemax={100}><div className="h-full rounded-full bg-amber-400" style={{ width: `${percentage}%` }} /></div>
+        <div className={`mt-3 flex items-center justify-between gap-1 text-xs font-bold ${technology.color}`}>
+          {availableQuestions > 0 ? 'Start Learning' : 'View Topics'}<ArrowRight size={16} className="shrink-0 transition-transform group-hover:translate-x-1" />
+        </div>
       </div>
-
-      <div className="mt-auto space-y-3 border-t border-white/10 pt-5">
-
-        <div className="flex items-center gap-2 text-sm text-slate-300">
-
-          <BookOpen
-            size={17}
-            className={technology.color}
-          />
-
-          {technology.targetQuestions} Planned Questions
-
-        </div>
-
-        <div className="flex items-center gap-2 text-sm text-slate-300">
-
-          <Headphones
-            size={17}
-            className={technology.color}
-          />
-
-          Instructor-style Narration
-
-        </div>
-
-        <div className="flex items-center gap-2 text-sm text-slate-300">
-
-          <Code2
-            size={17}
-            className={technology.color}
-          />
-
-          Practical Examples
-
-        </div>
-
-        <div
-          className={`flex items-center justify-between pt-3 font-bold ${technology.color}`}
-        >
-
-          Start Learning
-
-          <ArrowRight
-            size={20}
-            className="transition-transform group-hover:translate-x-2"
-          />
-
-        </div>
-
-      </div>
-
     </Link>
   );
 }
