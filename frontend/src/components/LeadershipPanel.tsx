@@ -20,7 +20,7 @@ const teamMembers: TeamMember[] = [
   },
   {
     name: 'Manasa Mamidla',
-    role: 'Chief Executive Officer',
+    role: 'Co-Founder',
     image: '/leadership/manasa.jpg',
     initials: 'MM',
     qualities: ['Leadership', 'Strategic', 'Dedicated'],
