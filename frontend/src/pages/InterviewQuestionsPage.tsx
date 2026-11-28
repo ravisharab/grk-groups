@@ -1,3 +1,4 @@
+import { pythonQuestions } from '../data/interview/pythonQuestions';
 import { codingQuestions } from '../data/interview/codingQuestions';
 import { systemDesignQuestions } from '../data/interview/systemDesignQuestions';
 
@@ -39,6 +40,7 @@ interface LearningProgress {
 }
 
 const questionBanks: Record<string, InterviewQuestion[]> = {
+  python: pythonQuestions,
   java: javaQuestions,
   aws: awsQuestions,
   kafka: kafkaQuestions,

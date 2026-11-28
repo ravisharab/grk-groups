@@ -196,4 +196,30 @@ export const technologies: Technology[] = [
       'Time Complexity',
     ],
   },
+  {
+    slug: 'python',
+    name: 'Python',
+    icon: '🐍',
+    description: 'Python Development, Data Engineering and Coding',
+    targetQuestions: 200,
+    color: 'text-yellow-400',
+    gradient: 'from-yellow-500/20 to-blue-900/20',
+    border: 'border-yellow-400/30',
+    topics: [
+      'Python Fundamentals',
+      'Collections',
+      'Functions',
+      'OOP',
+      'Exception Handling',
+      'Concurrency',
+      'NumPy',
+      'Pandas',
+      'FastAPI',
+      'Django',
+      'Data Engineering',
+      'PySpark',
+      'Airflow',
+      'Coding Challenges'
+    ]
+  },
 ];
