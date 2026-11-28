@@ -1,3 +1,4 @@
+import { codingQuestions } from '../data/interview/codingQuestions';
 import { systemDesignQuestions } from '../data/interview/systemDesignQuestions';
 
 import { useState, useEffect, useRef } from 'react';
@@ -45,6 +46,7 @@ const questionBanks: Record<string, InterviewQuestion[]> = {
   'spring-boot': springBootQuestions,
   kubernetes: kubernetesQuestions,
   'system-design': systemDesignQuestions,
+  coding: codingQuestions,
 };
 
 function loadProgress(

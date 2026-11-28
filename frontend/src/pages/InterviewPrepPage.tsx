@@ -1,3 +1,4 @@
+import { codingQuestions } from '../data/interview/codingQuestions';
 import { systemDesignQuestions } from '../data/interview/systemDesignQuestions';
 import { useState } from 'react';
 import { GraduationCap, Search, X, BookOpen, Languages, CheckCircle2 } from 'lucide-react';
@@ -20,6 +21,7 @@ const questionBanks: Record<string, InterviewQuestion[]> = {
   'spring-boot': springBootQuestions,
   kubernetes: kubernetesQuestions,
   'system-design': systemDesignQuestions,
+  coding: codingQuestions,
   springboot: springBootQuestions,
 };
 const availableCount = (slug: string) => (questionBanks[slug] ?? []).filter(q => q.isPublished).length;
